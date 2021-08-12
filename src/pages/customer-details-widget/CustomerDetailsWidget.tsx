@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { createDetailsWidget } from '@livechat/agent-app-sdk';
+import { createDetailsWidget, ICustomerProfile, SectionComponentType } from '@livechat/agent-app-sdk';
 import { Card, Divider } from '@livechat/design-system';
 import '@livechat/design-system/dist/design-system.css';
 import ReactJson from 'react-json-view';
@@ -37,25 +37,28 @@ export default function CustomerDetailsWidget(): React.ReactElement {
 
   const cardTitle = customerProfile?.name as string;
   const placeholder = <p>Customer profile object has not been loaded</p>;
-  const customerProfileCard = (
+
+  if (!customerProfile) {
+    return placeholder;
+  }
+
+  return (
     <p>
       <header className="AppHeader">Details</header>
       <main>
         <Card title={cardTitle}>
           <div>
             <p>Customer profile object contains thread id and chat id:</p>
-            <ReactJson src={customerProfile?.chat as Record<string, unknown>} collapsed />
+            <ReactJson src={customerProfile.chat} collapsed />
             <Divider />
             <p>Geolocation data of the customer is also available:</p>
-            <ReactJson src={customerProfile?.geolocation as Record<string, unknown>} collapsed />
+            <ReactJson src={customerProfile.geolocation} collapsed />
             <Divider />
             <p>Full contents of Customer profile object:</p>
-            <ReactJson src={customerProfile as Record<string, unknown>} collapsed />
+            <ReactJson src={customerProfile} collapsed />
           </div>
         </Card>
       </main>
     </p>
   );
-
-  return customerProfile !== null ? customerProfileCard : placeholder;
 }
