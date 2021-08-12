@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link, Redirect, Route, Switch, useLocation } from 'wouter';
+import React from 'react';
+import { Route } from 'wouter';
 import CustomerDetailsWidget from './pages/customer-details-widget/CustomerDetailsWidget';
+import './App.css';
 
 function App(): JSX.Element {
   return (
