@@ -1,0 +1,12 @@
+.App {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.AppHeader {
+    font-size: 20px;
+    line-height: 24px;
+    color: rgb(66, 77, 87);
+    font-weight: 600;
+    margin: 14px 12px 10px;
+}
