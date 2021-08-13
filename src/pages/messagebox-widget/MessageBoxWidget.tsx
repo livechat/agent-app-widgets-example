@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { FieldGroup, RadioButton } from '@livechat/design-system';
+import { Link } from 'wouter';
+import { Button, Card, FieldGroup, Icon, RadioButton } from '@livechat/design-system';
 import { createMessageBoxWidget, IMessageBoxWidget } from '@livechat/agent-app-sdk';
 import '@livechat/design-system/dist/design-system.css';
+import './MessageBoxWidget.css';
 import templates, { Template } from './message-templates';
 
 export default function MessageBoxWidget(): React.ReactElement {
@@ -36,9 +38,20 @@ export default function MessageBoxWidget(): React.ReactElement {
       {template.label}
     </RadioButton>
   ));
+
   return (
-    <div style={{ margin: '0.8rem' }}>
-      <FieldGroup>{...radioButtons}</FieldGroup>
-    </div>
+    <Card title="">
+      <div className="custom-card-title">
+        <span className="AppHeader">Select and send rich message</span>
+        <div className="custom-card-title-link">
+          <Link href="/pages/permissions" className="active">
+            <Button kind="primary">Test app permissions</Button>
+          </Link>
+        </div>
+      </div>
+      <div style={{ margin: '0.8rem' }}>
+        <FieldGroup>{...radioButtons}</FieldGroup>
+      </div>
+    </Card>
   );
 }

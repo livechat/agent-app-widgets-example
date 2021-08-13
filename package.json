@@ -10,7 +10,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "@livechat/agent-app-sdk": "^1.5.1",
+    "@livechat/agent-app-sdk": "^1.5.2",
     "@livechat/design-system": "^0.13.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
