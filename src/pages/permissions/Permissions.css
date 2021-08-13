@@ -1,0 +1,19 @@
+.checkboxes-container {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.permission-checkbox {
+  margin-right: 0.5em;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  margin-right: 10px;
+  align-items: center;
+}
