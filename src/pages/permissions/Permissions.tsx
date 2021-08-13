@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useEffect, useRef, useState } from 'react';
-import { Card, CheckboxField, Switch } from '@livechat/design-system';
+import { Button, Card, CheckboxField, Switch, TextAreaField } from '@livechat/design-system';
 import '@livechat/design-system/dist/design-system.css';
 import PermissionResultState from './types';
 import './Permissions.css';
@@ -44,6 +44,10 @@ export default function Permissions(): React.ReactElement {
     }
   }, [isPreviewDisplayed]);
 
+  const handleOnClick = () => {
+    navigator.clipboard.writeText(Date.now().toString());
+  };
+
   return (
     <div style={{ margin: '0.5rem' }}>
       <Card title="Camera and microphone">
@@ -72,6 +76,19 @@ export default function Permissions(): React.ReactElement {
 
           {hasCameraAccess && isPreviewDisplayed && <video ref={videoElement} autoPlay />}
           <span>{error}</span>
+        </div>
+      </Card>
+      <Card title="Clipboard">
+        <div>
+          <p>
+            <Button onClick={() => handleOnClick()}>Write to Clipboard</Button>
+          </p>
+          <TextAreaField
+            inline
+            id="text-area-field"
+            placeholder="Placeholder..."
+            description="Click button to copy random text to the Clipboard and paste it into input"
+          />
         </div>
       </Card>
     </div>
