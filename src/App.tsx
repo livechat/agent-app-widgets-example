@@ -4,13 +4,16 @@ import CustomerDetailsWidget from './pages/customer-details-widget/CustomerDetai
 import './App.css';
 import MessageBoxWidget from './pages/messagebox-widget/MessageBoxWidget';
 import Permissions from './pages/permissions/Permissions';
+import Tiles from './pages/tiles/Tiles';
+import AppRoute from './routes';
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <Route path="/pages/customer-details-widget" component={CustomerDetailsWidget} />
-      <Route path="/pages/message-box-widget" component={MessageBoxWidget} />
-      <Route path="/pages/permissions" component={Permissions} />
+      <Route path={AppRoute.CustomerProile} component={CustomerDetailsWidget} />
+      <Route path={AppRoute.RichMessages} component={MessageBoxWidget} />
+      <Route path={AppRoute.Permissions} component={Permissions} />
+      <Route path={AppRoute.Tiles} component={Tiles} />
     </div>
   );
 }
