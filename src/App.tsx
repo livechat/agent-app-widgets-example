@@ -1,21 +1,18 @@
 import React from 'react';
 import { Route } from 'wouter';
-import CustomerDetailsWidget from './pages/customer-details-widget/CustomerDetailsWidget';
 import './App.css';
-import MessageBoxWidget from './pages/messagebox-widget/MessageBoxWidget';
-import Permissions from './pages/permissions/Permissions';
-import Tiles from './pages/tiles/Tiles';
+import CustomerDetails from './pages/CustomerDetails';
+import FullScreen from './pages/FullScreen';
+import MessageBox from './pages/MessageBox';
+
 import AppRoute from './routes';
-import CounterBadge from './pages/counter-badge/CounterBadge';
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <Route path={AppRoute.CustomerProile} component={CustomerDetailsWidget} />
-      <Route path={AppRoute.RichMessages} component={MessageBoxWidget} />
-      <Route path={AppRoute.Permissions} component={Permissions} />
-      <Route path={AppRoute.CounterBadge} component={CounterBadge} />
-      <Route path={AppRoute.Tiles} component={Tiles} />
+      <Route path={AppRoute.CustomerDetails} component={CustomerDetails} />
+      <Route path={AppRoute.MessageBox} component={MessageBox} />
+      <Route path={AppRoute.Fullscreen} component={FullScreen} />
     </div>
   );
 }

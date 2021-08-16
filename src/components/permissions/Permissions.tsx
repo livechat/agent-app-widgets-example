@@ -49,7 +49,7 @@ export default function Permissions(): React.ReactElement {
   };
 
   return (
-    <div style={{ margin: '0.5rem' }}>
+    <div>
       <Card title="Camera and microphone">
         <div>
           <div className="checkboxes-container">

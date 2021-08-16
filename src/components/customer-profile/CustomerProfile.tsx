@@ -4,7 +4,7 @@ import { Card, Divider } from '@livechat/design-system';
 import '@livechat/design-system/dist/design-system.css';
 import ReactJson from 'react-json-view';
 
-export default function CustomerDetailsWidget(): React.ReactElement {
+export default function CustomerProfile(): React.ReactElement {
   const [customerProfile, setCustomerProfile] = useState<ICustomerProfile | null>(null);
   useEffect(() => {
     createDetailsWidget().then((widget) => {
@@ -43,7 +43,7 @@ export default function CustomerDetailsWidget(): React.ReactElement {
   }
 
   return (
-    <p>
+    <div>
       <header className="AppHeader">Details</header>
       <main>
         <Card title={cardTitle}>
@@ -59,6 +59,6 @@ export default function CustomerDetailsWidget(): React.ReactElement {
           </div>
         </Card>
       </main>
-    </p>
+    </div>
   );
 }

@@ -1,9 +1,7 @@
 enum AppRoute {
-  CustomerProile = '/pages/customer-profile',
-  RichMessages = '/pages/rich-messages',
-  Permissions = '/pages/permissions',
-  CounterBadge = '/pages/counterbadge',
-  Tiles = '/pages/tiles',
+  MessageBox = '/pages/message-box',
+  CustomerDetails = '/pages/customer-details',
+  Fullscreen = '/pages/full-screen',
 }
 
 export default AppRoute;
