@@ -31,10 +31,10 @@ export default function CustomerDetailsWidget(): React.ReactElement {
           </Button>
         </div>
         <div>
-          Or set it manually:{' '}
+          Or set it manually:
           <NumericInput
+            style={{ margin: '0.8rem' }}
             width="60px"
-            min={1}
             value={counter as unknown as string}
             onChange={(value) => setCounter(value as unknown as number)}
           />
