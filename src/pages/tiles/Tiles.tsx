@@ -12,6 +12,11 @@ const availableTiles: ITileProps[] = [
     route: AppRoute.CustomerProile,
   },
   { title: 'Rich messages', description: 'Send different types of rich messages', route: AppRoute.RichMessages },
+  {
+    title: 'Fullscreen Example - notification badge',
+    description: 'Check if badge counter works for integration',
+    route: AppRoute.CounterBadge,
+  },
 ];
 
 export default function Tiles(): React.ReactElement {
