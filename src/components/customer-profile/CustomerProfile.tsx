@@ -43,22 +43,17 @@ export default function CustomerProfile(): React.ReactElement {
   }
 
   return (
-    <div>
-      <header className="AppHeader">Details</header>
-      <main>
-        <Card title={cardTitle}>
-          <div>
-            <p>Customer profile object contains thread id and chat id:</p>
-            <ReactJson src={customerProfile.chat} collapsed />
-            <Divider />
-            <p>Geolocation data of the customer is also available:</p>
-            <ReactJson src={customerProfile.geolocation} collapsed />
-            <Divider />
-            <p>Full contents of Customer profile object:</p>
-            <ReactJson src={customerProfile} collapsed />
-          </div>
-        </Card>
-      </main>
-    </div>
+    <Card title={cardTitle}>
+      <div>
+        <p>Customer profile object contains thread id and chat id:</p>
+        <ReactJson src={customerProfile.chat} collapsed />
+        <Divider />
+        <p>Geolocation data of the customer is also available:</p>
+        <ReactJson src={customerProfile.geolocation} collapsed />
+        <Divider />
+        <p>Full contents of Customer profile object:</p>
+        <ReactJson src={customerProfile} collapsed />
+      </div>
+    </Card>
   );
 }

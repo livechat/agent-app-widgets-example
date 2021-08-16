@@ -7,10 +7,10 @@ import RichMessages from '../components/rich-messages/RichMessages';
 
 export default function MessageBox(): React.ReactElement {
   return (
-    <div>
+    <div className="messageBoxContainer">
+      <CustomerProfile />
       <RichMessages />
       <Permissions />
-      <CustomerProfile />
     </div>
   );
 }

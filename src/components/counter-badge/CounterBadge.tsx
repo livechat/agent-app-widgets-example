@@ -21,7 +21,9 @@ export default function CustomerDetailsWidget(): React.ReactElement {
     <div>
       <Card title="Badge tester:">
         Click to increment counter in the badge:
-        <Button onClick={() => setCounter(counter + 1)}>Add</Button>
+        <Button style={{ margin: '0.8rem' }} onClick={() => setCounter(counter + 1)}>
+          Add
+        </Button>
       </Card>
     </div>
   );
