@@ -1,0 +1,8 @@
+.custom-card-title {
+  display: flex;
+  align-items: center;
+}
+
+.custom-card-title-link {
+  margin-left: auto;
+}

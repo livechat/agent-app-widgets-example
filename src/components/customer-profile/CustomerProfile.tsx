@@ -4,7 +4,7 @@ import { Card, Divider } from '@livechat/design-system';
 import '@livechat/design-system/dist/design-system.css';
 import ReactJson from 'react-json-view';
 
-export default function CustomerDetailsWidget(): React.ReactElement {
+export default function CustomerProfile(): React.ReactElement {
   const [customerProfile, setCustomerProfile] = useState<ICustomerProfile | null>(null);
   useEffect(() => {
     createDetailsWidget().then((widget) => {
@@ -43,22 +43,17 @@ export default function CustomerDetailsWidget(): React.ReactElement {
   }
 
   return (
-    <p>
-      <header className="AppHeader">Details</header>
-      <main>
-        <Card title={cardTitle}>
-          <div>
-            <p>Customer profile object contains thread id and chat id:</p>
-            <ReactJson src={customerProfile.chat} collapsed />
-            <Divider />
-            <p>Geolocation data of the customer is also available:</p>
-            <ReactJson src={customerProfile.geolocation} collapsed />
-            <Divider />
-            <p>Full contents of Customer profile object:</p>
-            <ReactJson src={customerProfile} collapsed />
-          </div>
-        </Card>
-      </main>
-    </p>
+    <Card title={cardTitle}>
+      <div>
+        <p>Customer profile object contains thread id and chat id:</p>
+        <ReactJson src={customerProfile.chat} collapsed />
+        <Divider />
+        <p>Geolocation data of the customer is also available:</p>
+        <ReactJson src={customerProfile.geolocation} collapsed />
+        <Divider />
+        <p>Full contents of Customer profile object:</p>
+        <ReactJson src={customerProfile} collapsed />
+      </div>
+    </Card>
   );
 }
