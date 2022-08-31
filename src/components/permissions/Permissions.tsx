@@ -15,7 +15,11 @@ export default function Permissions(): React.ReactElement {
   const requestMicAndCamera = () => {
     navigator.getUserMedia(
       { video: true, audio: true },
-      (stream: MediaStream) => (videoElement.current.srcObject = stream),
+      (stream: MediaStream) => {
+        if (videoElement.current) {
+          videoElement.current.srcObject = stream;
+        }
+      },
       (videoError: MediaStreamError) => setError(videoError.message)
     );
   };
